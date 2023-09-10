@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('medicine_tag', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('medicine_id')->constrained();
-            $table->foreignId('tag_id')->constrained();
+            $table->foreignId('medicine_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();;
+            $table->foreignId('tag_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();;
             $table->timestamps();
         });
     }
